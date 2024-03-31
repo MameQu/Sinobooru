@@ -1,0 +1,145 @@
+html {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  display: flex;
+  top: 0px;
+}
+
+.image-resize {
+  width: calc(100% / 7);
+  /* Set the width to occupy 1/7th of the parent container */
+  height: auto;
+  /* Maintain the original aspect ratio */
+  max-width: 100%;
+  /* Limit the maximum width to avoid stretching */
+  display: inline-block;
+  /* Display the images in a row */
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: -250px;
+  /* Start with the sidebar hidden */
+  width: 250px;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(255, 247, 219);
+  transition: left 0.1s ease;
+}
+
+
+#toggleButton {
+  position: fixed;
+  opacity: 1;
+  transition: opacity 0.3s ease-out;
+}
+
+#toggleButton:hover {
+  opacity: 1;
+}
+
+#toggleButton.fade-out {
+  opacity: 0;
+}
+
+.sidebar.active {
+  left: 0;
+  display: flex;
+  /* Show the sidebar */
+}
+
+#toggleButton {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+}
+
+.box-list {
+  display: flex;
+  flex-direction: column;
+  padding-top: 5%;
+  overflow: auto;
+}
+
+.span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pb {
+  margin-top: 10px;
+  z-index: auto;
+  margin-right: 5px;
+}
+
+:root {
+  --darkreader-neutral-background: #eedfc5;
+  --darkreader-neutral-text: #1a1b19;
+  --darkreader-selection-background: #4b637e;
+  --darkreader-selection-text: #ffffe8;
+}
+
+::-webkit-scrollbar {
+  background-color: #fff7db;
+  color: #63645d;
+}
+
+::-webkit-scrollbar-corner {
+  background-color: #ffffe8;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #c2b59e;
+}
+
+::selection {
+  background-color: #4b637e !important;
+  color: #ffffe8 !important;
+}
+
+
+.box {
+  width: 200px;
+  height: 30px;
+  background-color: rgb(231, 216, 191);
+  border-color: rgb(145 133 113);
+  margin-bottom: 10px;
+  border: 1px solid gray;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.box:hover {
+  background-color: gray;
+  color: white;
+}
+
+.floating-picture {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  height: 100%;
+  width: 100%;
+  transform: translate(-50%, -50%);
+  background-color: rgb(255, 255, 255);
+  display: none;
+}
+
+.image-display {
+  max-width: 100%;
+  max-height: 100%;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#loading-screen {
+  /* Loading screen styles */
+  display: none;
+}
